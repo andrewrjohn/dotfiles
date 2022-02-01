@@ -1,0 +1,67 @@
+[user]
+	email = johnsonrobertandrew@gmail.com
+	name = Andrew Johnson
+
+[branch]
+	autosetuprebase = always # Configures all tracking branches to use rebase
+
+[core]
+    autocrlf = input # Normalize line endings when committing. Note: If you are on a PC, this should be set to `true` instead of `input`
+    excludesfile = ~/.gitignore
+
+[diff]
+	tool = diffmerge
+
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+
+[merge]
+	tool = diffmerge
+
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+
+[core]
+	pager = delta
+	editor = nvim
+
+[init]
+	defaultBranch = master
+
+[diff]
+    renames = true # Enable detection of renamed files when diffing
+
+[pull]
+    rebase = true # Rebase branches on top of the fetched branch
+
+[fetch]
+    prune = true # Remove remote-tracking branches that don't exist on origin whenever you fetch (includes pull) - "garbage collection"
+
+[push]
+    default = current # Assumes the current branch when pushing, creating that branch on origin if it doesn't exist
+
+[interactive]
+    singlekey = true # Saves you from having to hit enter when using an interactive command
+
+[delta]
+	plus-style = "#28db00" "#1f7500"
+	line-numbers-plus-style = "#28db00"
+	minus-style = "#eb0231" "#a10623"
+	line-numbers-minus-style = "#eb0231"
+	# minus-color = "#340001"
+	syntax-theme = Nord 
+	line-numbers = true
+	file-style = bold white
+	file-decoration-style = none
+	hunk-header-decoration-style = none
+
+[interactive]
+	diffFilter = delta --color-only[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
