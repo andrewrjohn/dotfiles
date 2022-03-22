@@ -1,3 +1,4 @@
+-- A helper function to easily create remaps
 map = function(key)
   -- get the extra options
   local opts = {noremap = true}
