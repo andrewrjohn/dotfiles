@@ -1,8 +1,18 @@
 #!/bin/bash
 
-rsync -r ./.config/nvim ~/.config/
+ln -s $(pwd)/.config/nvim ~/.config/
+echo "Symlink created!"
 
 source ~/.config/nvim/init.lua
+echo "Config sourced!"
+
+echo "Installing additional dependencies..."
+brew install fzf the_silver_searcher bat
+echo "Dependencies installed!"
+
+echo "Installing plugins..."
+nvim +PlugInstall +qall
+echo "Plugins installed!"
 
 echo
-echo "Neovim config updated successfully! Remember to run ':PlugInstall' if you have added any plugins"
+echo "Neovim config updated successfully!

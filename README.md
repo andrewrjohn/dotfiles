@@ -2,13 +2,7 @@ All updates to the config files should be made in this repository, then use the 
 
 ## Vim/Neovim
 
-If this is your first time running this script:
-
-`chmod +x ./scripts/sync_vim.sh`
-
-then
-
-`./scripts/sync_vim.sh`
+Go [here](./docs/vim.md) to find the Vim-specific documentation.
 
 ## Git
 
