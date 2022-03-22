@@ -49,3 +49,4 @@ set.termguicolors = true
 vim.cmd "colorscheme onedark"
 
 vim.g.airline_theme = "onedark"
+vim.g.airline_section_z = "%l:%c"
