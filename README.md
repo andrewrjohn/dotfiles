@@ -1,17 +1,13 @@
-All updates to the config files should be made in this repository, then use the helper scripts to sync them with your local machine:
+## How to Use
 
-## Vim/Neovim
+1. Clone the repository
 
-Go [here](./docs/vim.md) to find the Vim-specific documentation.
+```bash
+git clone https://github.com/andrewrjohn/dotfiles
+```
 
-## Git
+2. Symlink the `config` directory to `~/.config` (or any subdirectory of `~/.config` if you don't want the entire directory)
 
-If this is your first time running this script:
-
-`chmod +x ./scripts/sync_git.sh`
-
-then
-
-`./scripts/sync_git.sh`
-
-_These scripts are confirmed to be working on Mac only, but most Linux distros should work as well. Sorry to any Windows users 🤷‍♂️_
+```bash
+ln -s ~/dotfiles/config ~/.config
+```
