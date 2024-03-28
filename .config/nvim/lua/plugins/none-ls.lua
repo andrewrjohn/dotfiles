@@ -5,7 +5,22 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.prettier.with({
+					filetypes = {
+						"json",
+						"yaml",
+						"html",
+						"css",
+						"scss",
+						"markdown",
+						"typescript",
+						"typescriptreact",
+						"javascript",
+						"javascriptreact",
+						"jsx",
+						"tsx",
+					},
+				}),
 			},
 
 			on_attach = function(client, buffer)
