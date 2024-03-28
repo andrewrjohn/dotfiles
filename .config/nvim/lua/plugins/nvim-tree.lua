@@ -12,9 +12,6 @@ return {
 				side = "left",
 				adaptive_size = true,
 			},
-			filters = {
-				dotfiles = true,
-			},
 		})
 		vim.keymap.set("n", "<C-n>", ":NvimTreeFindFileToggle<CR>")
 	end,
