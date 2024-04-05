@@ -13,12 +13,6 @@ map({ "i", "jk", "<Esc>" })
 -- space + l to go to last file in buffer
 map({ "n", "<Leader>l", "<C-^>" })
 
--- easier split navigation
-map({ "n", "<C-J>", "<C-W><C-J>" })
-map({ "n", "<C-K>", "<C-W><C-K>" })
-map({ "n", "<C-L>", "<C-W><C-L>" })
-map({ "n", "<C-H>", "<C-W><C-H>" })
-
 -- clear search highlights on escape
 map({ "n", "<Esc>", ":noh<CR>" })
 
