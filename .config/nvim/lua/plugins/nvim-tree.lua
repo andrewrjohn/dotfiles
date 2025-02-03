@@ -9,7 +9,7 @@ return {
 		require("nvim-tree").setup({
 			view = {
 				width = 40,
-				side = "left",
+				side = "right",
 				adaptive_size = true,
 			},
 		})
