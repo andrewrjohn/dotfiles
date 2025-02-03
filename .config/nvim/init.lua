@@ -16,6 +16,11 @@ map({ "n", "<Leader>l", "<C-^>" })
 -- clear search highlights on escape
 map({ "n", "<Esc>", ":noh<CR>" })
 
+map({ "n", "<C-k>", "<C-w>k" })
+map({ "n", "<C-j>", "<C-w>j" })
+map({ "n", "<C-h>", "<C-w>h" })
+map({ "n", "<C-l>", "<C-w>l" })
+
 local set = vim.opt
 
 set.number = true
