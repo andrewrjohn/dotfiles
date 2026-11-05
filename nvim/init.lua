@@ -868,6 +868,23 @@ do
   }
 end
 
+-- Git history
+vim.keymap.set('v', '<leader>gl', function() require('telescope.builtin').git_bcommits_range() end, { desc = '[G]it [L]ine history' })
+vim.keymap.set('n', '<leader>gh', function() require('telescope.builtin').git_bcommits() end, { desc = '[G]it file [H]istory' })
+
+-- GitHub links
+local function copy_github_url(url)
+  vim.fn.setreg('+', url)
+  vim.notify('Copied ' .. url)
+end
+vim.keymap.set({ 'n', 'v' }, '<leader>gy', function() Snacks.gitbrowse { open = copy_github_url, notify = false } end, { desc = '[G]it [Y]ank line link' })
+vim.keymap.set(
+  'n',
+  '<leader>gY',
+  function() Snacks.gitbrowse { what = 'file', open = function(url) copy_github_url((url:gsub('#L.*$', ''))) end, notify = false } end,
+  { desc = '[G]it [Y]ank file link' }
+)
+
 -- Claude Code
 do
   vim.pack.add { gh 'folke/snacks.nvim', gh 'coder/claudecode.nvim' }
